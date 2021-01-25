@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex ;
+            /* inline-flex 区别 inline不会有剩余空间 */
+            flex-direction:  column; 
+            /* row-reverse */
+            flex-wrap: wrap;
+            /* 换行 换列  default:nowrap  wrap-reverse 元素挤到上面 左边 */ 
+            flex-flow: column wrap;
+            /* <flex-direction> <flex-wrap>; */
+            justify-content: flex-start;
+            /* main axis X轴 flex-end  space-between space-around space-evenly 水平居中 center */
+            align-items: flex-end;
+            /* cross axis Y轴 default stretch baseline*/
+            order: 0;
+            /* default 0*/
+            flex-grow: 1;
+            /* 自动填充 */
+            flex-shrink: 1;
+            /* responsive default:1 */
+            flex-basis: 100px;
+            /* default:auto */
+            flex: 0 1 auto;
+            /* default */
+            align-self: auto;
+            /* base on align items */
+        } 
+           
+/* 
+  align-items single line
+  align-content multi line
+*/
+
+.container {
+    display: flex; 
+    /* 水平布局 */
+    /* variable height 等高 float need width*/
+}
+/*
+* Navbar 
+*/
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+nav ul li {
+    flex: auto;  
+}
+/*
+Card flex-direction: column
+Body flex:1
+Footer 
+*/
+    </style>
+</head>
+<body>
+</body>
+</html>

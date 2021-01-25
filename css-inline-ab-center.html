@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .out {
+            height: 300px;
+            width: 300px;
+            background-color: yellow;
+            position: relative;
+        }
+
+        /* 绝对布局垂直水平居中 */
+        .in {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /* inline-block */
+        .box {
+            width: 20%;
+            display: inline-block;
+        }
+        .box-blue {
+            background: lightblue;
+        }
+        .box-red {
+            background: red;
+        }
+        .box-purple {
+            background: purple;
+        }
+        .box-orange {
+            background: orange;
+        }
+        .container {
+            display: flex;
+            background: gray;
+            justify-content: center;
+        }
+
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+        }
+        h2 {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <p>Some paragraph text</p>
+    <h1>some heading 1 text</h1>
+    <h2>some heading 2 text</h2>
+
+    <div class="out">
+     <div class="in">
+
+     </div>
+    </div>
+    <div>
+        <div class="box box-blue">1</div><div class="box box-red">1</div><div class="box box-purple">1</div><div class="box box-orange">1</div>
+    </div>
+    <div class="container">
+        <div class="box box-blue">1</div>
+        <div class="box box-red">1</div>
+        <div class="box box-purple">1</div>
+        <div class="box box-orange">1</div>
+    </div>
+    
+</body>

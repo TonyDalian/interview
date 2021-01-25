@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="help">Helpful notes will appear here</p>
+    <p>E-mail: <input type="text" id="email" name="email"></p>
+    <p>Name: <input type="text" id="name" name="name"></p>
+    <p>Age: <input type="text" id="age" name="age"></p>
+
+    <script>
+        //eg 1
+        function makeHelpCallback(help) {
+            return function() {
+                document.getElementById('help').innerHTML = help;
+            };
+        }
+        
+        function setupHelp() {
+            var helpText = [
+                {'id': 'email', 'help': 'Your e-mail address'},
+                {'id': 'name', 'help': 'Your full name'},
+                {'id': 'age', 'help': 'Your age (you must be over 16)'}
+            ];
+        
+            for (var i = 0; i < helpText.length; i++) {
+                var item = helpText[i];
+                document.getElementById(item.id).onfocus =
+                makeHelpCallback(item.help);
+            }
+        }
+        
+        setupHelp();
+    
+    </script>
+
+    <a href="#" id="size-12">12</a>
+    <a href="#" id="size-14">14</a>
+    <a href="#" id="size-16">16</a>
+    <script>
+        //eg 2
+        var makeSizer = function(size){
+            return function(){
+                document.body.style.fontSize =  size + 'px';
+            }
+        }
+        
+        document.getElementById('size-12').onclick = makeSizer(12);
+        document.getElementById('size-14').onclick = makeSizer(14);
+        document.getElementById('size-16').onclick = makeSizer(16);
+    </script>
+</body>
+<script>
+    // Inner function will have access to the variables in the outer function scope
+    var passed = 3;
+    var addTo = function () {
+        var inner = 2;
+        return passed + inner;
+    }
+    console.log(addTo());
+    var passed = 4;
+    console.log(addTo());
+
+    var addTo = function(passed) {
+        var add = function(inner){
+            return passed + inner;
+        }
+
+        return add;
+    }
+
+    var result = addTo(1)(4);
+    console.log(result);
+</script>
+</html>
