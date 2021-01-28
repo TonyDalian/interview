@@ -228,7 +228,7 @@ python manage.py shell
     return render(request, 'polls/detail.html', { 'question': question })
 ```
 
-# Work experience with non-relational databases (MongoDB, DynamoDB, or other)
+# MongoDB Postgres
 ## Cloud Mongo
 https://cloud.mongodb.com/v2/5ff04d0a86e4ab652ac57dec#clusters/commandLineTools/Cluster0
 mLab mongoose Schema
