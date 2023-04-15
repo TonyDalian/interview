@@ -1,6 +1,33 @@
+As a web developer, I have a passion for creating visually appealing, functional, and secure websites and web applications. With my expertise in HTML, CSS, JavaScript, React, Angular. I can develop powerful, high-performance websites and applications.
+
+I am also experienced in integrating web applications with other services, such as NodeJS and graphQL, as well as optimizing websites for maximum performance. I keep up-to-date with the latest web technologies and standards to ensure my work is always up to date.
+
+On top of that, I am a problem solver, adept at testing and debugging web applications. I am confident that my skillset and experience can bring value to any organization.
+
+• Emphasize passion for technology and building great websites. Mention your passion for user experience design, clean code, and developing innovative solutions. Hiring managers want to see enthusiastic developers.
+
+• Highlight relevant skills. Prominently feature key skills like HTML, CSS, JavaScript, PHP, MySQL, WordPress, React, Angular, Vue.js, etc. Use a bold header or separate "Skills" section to make them stand out.
+
+• Call out experience with modern frameworks and languages. Mention experience with popular front-end frameworks (React, Vue or Angular), back-end languages (Node, Ruby on Rails or Java), and CSS preprocessors (Sass or Less). These in-demand skills will impress potential employers.
+
+• Include projects to showcase your abilities. List your accomplishments and the impact you achieved. Call out key features and benefits you delivered for each project. Provide links to live demo websites when possible.
+
+• Emphasize a responsive and mobile-first approach. Mention your focus on user experience across all devices and building responsive, pixel-perfect websites and web apps. This is essential for today's web developers.
+
+• Highlight soft skills that make you a great developer. These include things like problem-solving, communication, attention to detail, coding best practices, collaboration, documentation, etc. Provide examples to illustrate your strengths.
+
+• Consider including links to your online profiles. Listing links to your GitHub, Stack Overflow, Dribbble or Behance profiles allows hiring managers to further evaluate your skills and experience. But only include links that project a professional image.
+
+• Get recommendations from managers or clients. If possible, include recommendations or testimonials from former managers, leaders or clients that can vouch for your abilities as a web developer. These social proofs will carry more weight with employers.
+
+• Use a clear and simple resume format. For a web developer position, choose a clean, minimal and modern format that is easy to read quickly. A simple sans-serif font, clear section headings, and lots of white space ensure your experience and skills stand out prominently.
+
+• Highlight relevant education. If you obtained a degree or certifications in web development, design, or a related field, prominently feature that on your resume. Relevant education credential shows your passion and commitment to the field.
+
+
 Hello, everyone. I'm Tony, a software engineer. Very excited to join our team, in the past five years, I worked for Fidelity International and IBM. I hope I can help our team and grow with our team together in the future . That's all, thank you.
 
-I'm Tony, my Chinese name is Litao. I'm thirty-three years old. I'm a front-end developer, I graduated from Dalian nationalities university in two thousand thirteen and got a master's degree. I'm good at javascript, especially react.
+I'm Tony, I'm thirty-three years old. I'm a front-end developer, I graduated from Dalian nationalities university in two thousand thirteen and got a master's degree. I'm good at javascript, especially react.
 
 In the past five years, I worked for Fidelity and IBM and was continuously focusing on the frontend developments part. During the 5 years, I did several React projects such as smart-onboarding and Fidelity secure transaction site and  In IBM I did event-hub, agile metrics tools.
 
