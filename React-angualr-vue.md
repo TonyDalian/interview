@@ -718,6 +718,12 @@ Angular的SSR（服务端渲染）是一种技术，可以在服务器上生成A
 确保使用适当的meta标签和其他SEO优化技术，以便搜索引擎能够有效索引内容。
 综上所述，async和defer在脚本加载和执行上有不同的行为，directive的配置选项提供了丰富的灵活性来定义指令的行为和结构，而SSR则是提升Angular应用性能和SEO友好性的重要技术。
 
+![image](https://github.com/user-attachments/assets/90e78c85-83d2-47e9-bd25-22f277e6a655)
+![image](https://github.com/user-attachments/assets/c925b4c8-636d-4a20-a568-f167de31cb49)
+![image](https://github.com/user-attachments/assets/9491a371-723a-4eb3-a3e8-263bb6699991)
+![image](https://github.com/user-attachments/assets/87630f36-0929-4260-ab83-b31f9076c261)
+
+
 
 
 
