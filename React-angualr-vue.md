@@ -685,6 +685,8 @@ Angular性能优化：
 在HTML中，<script>标签的async和defer属性都用于控制脚本的异步加载，但它们在执行时机和顺序上有所不同：
 表格
 async defer
+![image](https://github.com/user-attachments/assets/3ca72b27-e03e-4244-a4f0-856609abe58b)
+
 加载方式 异步加载，与HTML解析同时进行 异步加载，与HTML解析同时进行
 执行顺序 不保证按照它们在页面中的出现顺序执行 按照它们在HTML文档中的顺序依次执行
 执行时机 一旦脚本加载完成，就会立即执行，可能会在HTML解析完成之前或过程中执行 脚本会在HTML文档解析完毕后执行，在DOMContentLoaded事件触发之前
