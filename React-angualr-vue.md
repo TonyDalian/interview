@@ -658,189 +658,66 @@ export default {
 }
 </script>
 
-# Springboot
-## 什么是SpringBoot？
-用来简化spring应用的初始搭建以及开发过程，使用特定的方式来进行配置（properties或yml文件）创建独立的spring引用程序 main方法运行，嵌入的Tomcat 无需部署war文件，简化maven配置，自动配置spring添加对应功能starter自动化配置。
-## Spring Boot、Spring MVC 和 Spring 有什么区别？
-1、SpringSpring最重要的特征是依赖注入。所有 SpringModules 不是依赖注入就是 IOC 控制反转。当我们恰当的使用 DI 或者是 IOC 的时候，我们可以开发松耦合应用。松耦合应用的单元测试可以很容易的进行。
-2、Spring MVC提供了一种分离式的方法来开发 Web 应用。通过运用像DispatcherServelet，MoudlAndView 和ViewResolver 等一些简单的概念，开发 Web 应用将会变的非常简单。
-3、Spring 和 SpringMVC 的问题在于需要配置大量的参数。
-4、Spring Boot 通过一个自动配置和启动的项来目解决这个问题。为了更快的构建产品就绪应用程序，Spring Boot 提供了一些非功能性特征。
-## Spring Boot 的核心注解是哪个？它主要由哪几个注解组成的？
-1、@SpringBootConfiguration：组合了 @Configuration 注解，实现配置文件的功能。
-2、@EnableAutoConfiguration：打开自动配置的功能，也可以关闭某个自动配置的选项，如关闭数据源自动配置功能。
-3、@ComponentScan：Spring组件扫描。
-## 什么是 JavaConfig？
-1、面向对象的配置。由于配置被定义为 JavaConfig 中的类，因此用户可以充分利用 Java 中的面向对象功能。一个配置类可以继承另一个，重写它的@Bean 方法等。
-2、减少或消除 XML 配置。基于依赖注入原则的外化配置的好处已被证明。但是，许多开发人员不希望在 XML 和 Java 之间来回切换。JavaConfig 为开发人员提供了一种纯 Java 方法来配置与 XML 配置概念相似的 Spring 容器。从技术角度来讲，只使用 JavaConfig 配置类来配置容器是可行的，但实际上很多人认为将JavaConfig 与 XML 混合匹配是理想的。
-3、类型安全和重构友好。JavaConfig 提供了一种类型安全的方法来配置 Spring容器。由于 Java 5.0 对泛型的支持，现在可以按类型而不是按名称检索 bean，不需要任何强制转换或基于字符串的查找。
-## 什么是YAML?
-YAML是一种人类可读的数据序列化语言。它通常用于配置文件。
-与属性文件相比，如果我们想要在配置文件中添加复杂的属性，YAML文件就更加结构化，而且更少混淆。可以看出YAML具有分层配置数据。
-## bootstrap.yml和application.yml有什么区别?
-1、Spring Cloud 构建于 Spring Boot 之上，在 Spring Boot 中有两种上下文，一种是 bootstrap，另外一种是 application。
-2、application 配置文件这个容易理解，主要用于 Spring Boot 项目的自动化配置。
-3、bootstrap 是应用程序的父上下文，也就是说 bootstrap 加载优先于 applicaton。
-4、bootstrap 主要用于从额外的资源来加载配置信息，还可以在本地外部配置文件中解密属性。
-5、这两个上下文共用一个环境，它是任何Spring应用程序的外部属性的来源。
-6、bootstrap 里面的属性会优先加载，它们默认也不能被本地相同配置覆盖。
-7、boostrap 由父 ApplicationContext 加载，比 applicaton 优先加载
-8、boostrap 里面的属性不能被覆盖
-## springboot常用的starter有哪些?
-1、spring-boot-starter-web (嵌入tomcat和web开发需要servlet与jsp支持)
-2、spring-boot-starter-data-jpa (数据库支持)
-3、spring-boot-starter-data-redis (redis数据库支持)
-4、spring-boot-starter-data-solr (solr搜索应用框架支持)
-5、mybatis-spring-boot-starter (第三方的mybatis集成starter)
-## Spring Boot 配置加载顺序?
-1、properties文件
-2、YAML文件
-3、系统环境变量
-4、命令行参数
-## 如何使用Spring Boot实现异常处理?
-SpringControllerAdvice提供了一种使用处理异常的非常有用的方法。通过实现一个 ControllerAdvice类，来处理控制器类抛出的所有异常。
-## 如何重新加载 Spring Boot上的更改，而无需重新启动服务器？
-使用DEV工具来实现。
-通过这种依赖关系，可以节省任何更改，嵌入式 tomcat将重新启动。
-使用Spring Boot有一个开发工具Dev Tools模块，可以重新加载 Spring Boot上的更改，而无需重新启动服务器。消除每次手动部署更改的需要。Spring Boot在发布它的第一个版本时没有这个功能。该模块将在生产环境中被禁用。它还提供H2数据库控制台以更好地测试应用程序。
-## Spring Boot中的监视器是什么?
-Spring boot actuatorspring是启动框架中的重要功能之一。Spring boot监视器可访问生产环境中正在运行的应用程序的当前状态。有几个指标必须在生产环境中进行检查和监控。即使一些外部应用程序可能正在使用这些服务来向相关人员触发警报消息。监视器模块公开了一组可直接作为 http url rest访问的REST端点来检查状态。
-## 如何在自定义端口上运行 Spring Boot应用程序?
-在 application.properties中指定端口serverport=8090。
-## Spring Boot监听器流程?
-1、通过app.addListeners注册进入
-2、初始化一个SpringApplicationRunListeners进行处理
-3、从spring.factories中读取监听器处理类EventPublishingRunListener
-4、通过createSpringFactoriesInstances创建监听器处理类实例
-5、调用监听器listeners.starting()的方法来启动。
-6、底层把事件处理交给线程池去处理
-## Spring Boot初始化环境变量流程?
-1、调用prepareEnvironment方法去设置环境变量
-2、接下来有三个方法getOrCreateEnvironment，configureEnvironment，environmentPrepared
-3、getOrCreateEnvironment去初始化系统环境变量
-4、configureEnvironment去初始化命令行参数
-5、environmentPrepared当广播到来的时候调用onApplicationEnvironmentPreparedEvent方法去使用postProcessEnvironment方法load yml和properties变量
-## Spring Boot扫描流程?
-1、调用run方法中的refreshContext方法
-2、用AbstractApplicationContext中的refresh方法
-3、委托给invokeBeanFactoryPostProcessors去处理调用链
-4、其中一个方法postProcessBeanDefinitionRegistry会去调用processConfigBeanDefinitions解析beandefinitions
-5、在processConfigBeanDefinitions中有一个parse方法，其中有componentScanParser.parse的方法，这个方法会扫描当前路径下所有Component组件
-## 如何在 Spring Boot中禁用 Actuator端点安全性?
-默认情况下，所有敏感的HTTP端点都是安全的，只有具有 http ACTUATOR角色的用户才能访问它们。安全性是使用标准的 httpservletrequest. isuserinrole..isusernrole方法实施的。可以使用 management. security. enabled= false来禁用安全性。只有在执行机构端点在防火墙后访问时，才建议禁用安全性。
-## 如何实现 Spring Boot应用程序的安全性?
-使用 spring--startersecurityboot--依赖项，并且必须添加安全配置。配置类将必须扩展 WebSecurityConfigurerAdapter并覆盖其方法。
-## 什么是 Spring Batch?
-Spring Boot Batch提供可重用的函数，这些函数在处理大量记录时非常重要；包括日志/跟踪，事务管理，作业处理统计信息，作业重新启动，跳过和资源管理。它还提供了更先进的技术服务和功能，通过优化和分区技术，可以实现极高批量和高性能批处理作业。简单以及复杂的大批量批处理作业可以高度可扩展的方式利用框架处理重要大量的信息。
-## Spring Boot 有哪几种读取配置的方式？
-@PropertySource
-@Value
-@Environment
-@ConfigurationPropertie
+# Angular new feature
+Angular 16新特性：
+全新Reactivity模型的开发者预览，包括Angular Signals库和RXS互操作性。
+服务器端渲染和hydration增强，可以重用现有DOM节点。
+基于esbuild的全新Angular CLI构建器开发者预览版，显著缩短构建时间。
+改进独立组件、指令和管道的工具，提供迁移图表和独立的迁移指南。
+需要配合Node.js v16或v18以及TypeScript 4.9或更高版本使用。
+移除了View Engine和ngcc，更新了Angular包格式（APF）。
+Angular 17新特性：
+可推迟视图（Deferrable views），提升性能和开发者体验。
+新的块模板语法和内置控制流，提供更直观、更少的文档查找和更好的类型检查。
+改进混合渲染体验，支持Firebase部署。
+新的生命周期钩子afterRender和afterNextRender。
+Angular性能优化：
+使用OnPush策略，只在输入发生变化时重新渲染组件。
+在*ngFor指令中使用trackBy函数，提高渲染效率。
+使用Pure Pipes避免不必要的重新计算。
+考虑使用异步pipe和zone.js处理复杂数据流和事件。
+使用AOT编译提高页面加载速度。
+使用Lazy Loading将组件分成多个部分，按需加载。
+使用Web Workers在后台线程中执行复杂计算。
+手动停止检测变化，使用ChangeDetectorRef.detach提高检测效率。
+这些新特性和优化措施可以帮助开发者更好地利用Angular框架，提升应用性能和开发效率。
 
-# Spring Cloud
-## SpringBoot和SpringCloud的区别？
-SpringBoot专注于快速方便的开发单个个体微服务。
+在HTML中，<script>标签的async和defer属性都用于控制脚本的异步加载，但它们在执行时机和顺序上有所不同：
+表格
+async defer
+加载方式 异步加载，与HTML解析同时进行 异步加载，与HTML解析同时进行
+执行顺序 不保证按照它们在页面中的出现顺序执行 按照它们在HTML文档中的顺序依次执行
+执行时机 一旦脚本加载完成，就会立即执行，可能会在HTML解析完成之前或过程中执行 脚本会在HTML文档解析完毕后执行，在DOMContentLoaded事件触发之前
+适用场景 独立、不依赖于其他脚本或DOM内容的脚本，如分析工具或广告脚本 依赖于DOM结构的脚本，因为保证了脚本执行时DOM已经完全加载完成
 
-SpringCloud是关注全局的微服务协调整理治理框架，它将SpringBoot开发的一个个单体微服务整合并管理起来，为各个微服务之间提供，配置管理、服务发现、断路器、路由、微代理、事件总线、全局锁、决策竞选、分布式会话等等集成服务SpringBoot可以离开SpringCloud独立使用开发项目，但是SpringCloud离不开SpringBoot ，属于依赖的关系.
-SpringBoot专注于快速、方便的开发单个微服务个体，SpringCloud关注全局的治理框架
-## Spring Cloud
-Spring Cloud 就是微服务系统架构的一站式解决方案，在平时我们构建微服务的过程中需要做如 服务发现注册 、配置中心 、消息总线 、负载均衡 、断路器 、数据监控 等操作，而 Spring Cloud 为我们提供了一套简易的编程模型，使我们能在 Spring Boot 的基础上轻松地实现微服务项目的构建。
-## Spring Cloud 的服务发现框架——Eureka (Zookeeper)
-服务发现：其实就是一个“中介”，整个过程中有三个角色：服务提供者(出租房子的)、服务消费者(租客)、服务中介(房屋中介)。
+二、AngularJS中directive的配置
+在AngularJS中，directive（指令）的配置选项非常灵活，以下是一些常见的配置选项：
+restrict: 定义指令的声明方式，如元素（E）、属性（A）、类（C）或注释（M）。
+template/templateUrl: 定义指令的HTML模板，可以是内联的HTML代码或外部文件的路径。
+scope: 定义指令的隔离作用域，可以是一个新的作用域对象、一个布尔值（表示是否继承父作用域）或特殊值（如{}表示隔离作用域但不继承父作用域的属性）。
+link: 一个链接函数，用于定义指令的行为，它可以访问DOM元素、作用域和属性等。
+controller: 定义指令的控制器，用于封装指令的业务逻辑。
+require: 指定指令所依赖的其他指令的控制器，可以是字符串（表示指令名）或数组（表示多个指令名）。
+transclude: 允许指令将内容从其所在的位置“转移”到模板中的指定位置。
 
-服务提供者： 就是提供一些自己能够执行的一些服务给外界。
+三、Angular的SSR（服务端渲染）
+Angular的SSR（服务端渲染）是一种技术，可以在服务器上生成Angular应用的HTML内容，然后将其发送到客户端。这种方法提高了应用的首屏加载速度，并改善了SEO（搜索引擎优化）。
+基本过程：Angular应用在服务器上执行，将应用的视图转换为HTML字符串，然后将其发送到浏览器。
+实现方式：通常通过Angular Universal来实现，这是Angular的官方库，提供了为Angular应用程序生成服务端渲染的能力。
+使用步骤：
+安装Angular Universal和必要的依赖项。
+创建一个服务端的入口文件（如server.ts），并配置Express服务器。
+创建一个服务端的应用模块（如app.server.module.ts），用于引导Angular应用的服务端渲染。
+构建客户端和服务端的代码，并将它们放在dist文件夹中。
+启动Express服务器，运行Angular应用。
+优化建议：
+使用缓存来存储SSR的输出，以减少服务器负载。
+使用懒加载模块减少初始加载时所需的代码量。
+确保使用适当的meta标签和其他SEO优化技术，以便搜索引擎能够有效索引内容。
+综上所述，async和defer在脚本加载和执行上有不同的行为，directive的配置选项提供了丰富的灵活性来定义指令的行为和结构，而SSR则是提升Angular应用性能和SEO友好性的重要技术。
 
-服务消费者： 就是需要使用一些服务的“用户”。
 
-服务中介： 其实就是服务提供者和服务消费者之间的“桥梁”，服务提供者可以把自己注册到服务中介那里，而服务消费者如需要消费一些服务(使用一些功能)就可以在服务中介中寻找注册在服务中介的服务提供者。
 
-服务注册 Register：
 
-官方解释：当 Eureka 客户端向 Eureka Server 注册时，它提供自身的元数据，比如IP地址、端口，运行状况指示符URL，主页等。
 
-结合中介理解：房东 (提供者 Eureka Client Provider)在中介 (服务器 Eureka Server) 那里登记房屋的信息，比如面积，价格，地段等等(元数据 metaData)。
-
-服务续约 Renew：
-
-官方解释：Eureka 客户会每隔30秒(默认情况下)发送一次心跳来续约。
-## RestTemplate是Spring提供的一个访问Http服务的客户端类
-## 为什么需要 Ribbon？
-Ribbon 是 Netflix 公司的一个开源的负载均衡 项目，是一个客户端/进程内负载均衡器，运行在消费者端。
-提到 负载均衡 就不得不提到大名鼎鼎的 Nignx 了，而和 Ribbon 不同的是，它是一种集中式的负载均衡器。
-
-Ribbon 的几种负载均衡算法
-负载均衡，不管 Nginx 还是 Ribbon 都需要其算法的支持，如果我没记错的话 Nginx 使用的是 轮询和加权轮询算法。而在 Ribbon 中有更多的负载均衡调度算法，其默认是使用的 RoundRobinRule 轮询策略。
-
-RoundRobinRule：轮询策略。Ribbon 默认采用的策略。若经过一轮轮询没有找到可用的 provider，其最多轮询 10 轮。若最终还没有找到，则返回 null。
-RandomRule: 随机策略，从所有可用的 provider 中随机选择一个。
-RetryRule: 重试策略。先按照 RoundRobinRule 策略获取 provider，若获取失败，则在指定的时限内重试。默认的时限为 500 毫秒。
-## Open Feign
-映射 呀，就像域名和IP地址的映射。我们可以将被调用的服务代码映射到消费者端，这样我们就可以 “无缝开发”啦。
-## Hystrix之熔断和降级
-Hystrix 就是一个能进行 熔断 和 降级 的库，通过使用它能提高整个系统的弹性。
-## 微服务网关——Zuul
-Zuul 就是这样的一个对于 消费者 的统一入口。Router
-Zuul 的路由功能
-## Spring Cloud配置管理——Config
-Spring Cloud Config 就是能将各个 应用/系统/模块 的配置文件存放到 统一的地方然后进行管理(Git 或者 SVN)。
-## Spring Cloud Bus 
-作用就是管理和广播分布式系统中的消息，也就是消息引擎系统中的广播模式。当然作为 消息总线 的 Spring Cloud Bus 可以做很多事而不仅仅是客户端的配置刷新功能。
-
-# idea maven下载包太慢了如何解决
-在pom.xml中添加maven 依赖包时，我就发现不管是否用了翻墙，下载速度都好慢，就1M的东西能下半天，很是苦恼，于是到网上搜资料，然后让我查到了。说是使用阿里的maven镜像就可以了。我于是亲自试了下，速度快的飞起！！！
-
-操作步骤：
-
-1、右键项目选中maven选项，然后选择“open settings.xml”或者 “create settings.xml”
-
-2、然后把如下代码粘贴进去就可以了。重启IDE，感受速度飞起来的感觉吧！！！
-<?xml version="1.0" encoding="UTF-8"?>
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
-    <mirrors>
-        <!-- mirror
-         | Specifies a repository mirror site to use instead of a given repository. The repository that
-         | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
-         | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
-         |
-        <mirror>
-          <id>mirrorId</id>
-          <mirrorOf>repositoryId</mirrorOf>
-          <name>Human Readable Name for this Mirror.</name>
-          <url>http://my.repository.com/repo/path</url>
-        </mirror>
-         -->
- 
-        <mirror>
-            <id>alimaven</id>
-            <name>aliyun maven</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <mirrorOf>central</mirrorOf>
-        </mirror>
- 
-        <mirror>
-            <id>uk</id>
-            <mirrorOf>central</mirrorOf>
-            <name>Human Readable Name for this Mirror.</name>
-            <url>http://uk.maven.org/maven2/</url>
-        </mirror>
- 
-        <mirror>
-            <id>CN</id>
-            <name>OSChina Central</name>
-            <url>http://maven.oschina.net/content/groups/public/</url>
-            <mirrorOf>central</mirrorOf>
-        </mirror>
- 
-        <mirror>
-            <id>nexus</id>
-            <name>internal nexus repository</name>
-            <!-- <url>http://192.168.1.100:8081/nexus/content/groups/public/</url>-->
-            <url>http://repo.maven.apache.org/maven2</url>
-            <mirrorOf>central</mirrorOf>
-        </mirror>
- 
-    </mirrors>
-</settings>
+        
